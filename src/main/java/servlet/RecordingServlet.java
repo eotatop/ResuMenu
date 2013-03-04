@@ -48,11 +48,12 @@ public class RecordingServlet extends HttpServlet {
 				session.removeAttribute("SendTo");
                 twiml.append(new Say("Great! Thanks for the message."));
 				String userName = (String)session.getAttribute("userName");
+				String userMtn = (String)session.getAttribute("userMtn");
 				Provider bitly = as(bitlyName, bitlyAuth);
 				Url shortUrl = bitly.call(shorten(recordingUrl));
 				String shortUrlString = shortUrl.getShortUrl();
 				
-				String message = userName + " sent you a recording! " + shortUrlString;
+				String message = userName + " [" + userMtn + "] sent you a recording! " + shortUrlString;
 				Sms sms = new Sms(message);
 				sms.setTo("+13395269393");
 				

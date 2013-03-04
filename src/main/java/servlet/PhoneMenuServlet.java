@@ -35,6 +35,7 @@ public class PhoneMenuServlet extends HttpServlet{
 			}
 			message += ", Welcome to Cris Tarr's Twilio application.";
 			greeting = new Say(message);
+			session.setAttribute("userMtn", fromNumber);
 			session.setAttribute("userName", knownCaller);
         }
         

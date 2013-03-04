@@ -19,10 +19,10 @@ public class ContactInfoServlet extends HttpServlet {
 		
 		// Send links to resume
 		if (digits != null && digits.equals("1")) {
-			String resumeLinkMessage = "Here's Cris's rehsumay! http://bit.ly/XEnKbu";
+			String resumeLinkMessage = "Here's Cris's resume! http://bit.ly/XEnKbu";
 			
 			// If the above dial failed, say an error message.
-            Say say = new Say("Check your text messages for a link to Cris's rehsumay.");
+            Say say = new Say("Check your text messages for a link to Cris's resumay.");
             try { 
 				twiml.append(new Sms(resumeLinkMessage));
                 twiml.append(say);

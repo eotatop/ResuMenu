@@ -19,10 +19,10 @@ public class RecordingServlet extends HttpServlet {
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		HttpSession session = request.getSession(true);
 		
+		String sendTo = (String)session.getAttribute("SendTo");
         String recordingUrl = request.getParameter("RecordingUrl");
-        String target = request.getParameter("Target");
         TwiMLResponse twiml = new TwiMLResponse();
-        if (recordingUrl != null && target != "Cris") {
+        if (recordingUrl != null && sendTo != "Cris") {
             try {
                 twiml.append(new Say("Great! Here's what you recorded."));
                 twiml.append(new Play(recordingUrl));
@@ -43,8 +43,9 @@ public class RecordingServlet extends HttpServlet {
 				e.printStackTrace();
 				response.sendRedirect("/ivr");
 			}
-        } else if (recordingUrl != null && target == "Cris") {
+        } else if (recordingUrl != null && sendTo == "Cris") {
 			try {
+				session.removeAttribute("SendTo");
                 twiml.append(new Say("Great! Thanks for the message."));
 				String userName = (String)session.getAttribute("userName");
 				Provider bitly = as(bitlyName, bitlyAuth);

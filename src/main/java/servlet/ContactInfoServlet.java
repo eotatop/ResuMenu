@@ -1,7 +1,5 @@
 package com.twilio;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 import java.util.HashMap;
@@ -47,11 +45,13 @@ public class ContactInfoServlet extends HttpServlet {
 		}
 		// Leave Cris a recorded message
 		else if (digits != null && digits.equals("3")){
+			HttpSession session = request.getSession(true);
+			session.setAttribute("SendTo","Cris");
 			Say leaveAMessage = new Say("You can leave a message after the beep, ending with the pound sign.");
             Record record = new Record();
-            record.setMaxLength(30);
+            record.setMaxLength(60);
 			record.setFinishOnKey("#");
-            record.setAction("/recording?Target=Cris");
+            record.setAction("/recording");
             try {
                 twiml.append(leaveAMessage);
                 twiml.append(record);

@@ -175,7 +175,7 @@ public class CyoaServlet extends HttpServlet {
 		cyoaOptions.put("031.type", "continue");
 		cyoaOptions.put("0311.msg", "What? You can't swim? Obviously you die.");
 		cyoaOptions.put("0311.type", "endBad");
-		cyoaOptions.put("0312.msg", "You swim for safety, but hit your head on a rock and fall unconscious as you reach the shore.");
+		cyoaOptions.put("0312.msg", "You swim for safety, but hit your head on a rock and fall asleep.");
 		cyoaOptions.put("0312.type", "redirect,012");
 		cyoaOptions.put("032.msg", "Your boat was captured by pirates. And no. These are not good pirates. You die horribly.");
 		cyoaOptions.put("032.type", "endBad");

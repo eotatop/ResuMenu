@@ -20,7 +20,7 @@ public class RecordingServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		
         String recordingUrl = request.getParameter("RecordingUrl");
-        String target = request.getParameter("target");
+        String target = request.getParameter("Target");
         TwiMLResponse twiml = new TwiMLResponse();
         if (recordingUrl != null && target != "Cris") {
             try {

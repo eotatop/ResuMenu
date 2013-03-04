@@ -51,7 +51,7 @@ public class ContactInfoServlet extends HttpServlet {
             Record record = new Record();
             record.setMaxLength(30);
 			record.setFinishOnKey("#");
-            record.setAction("/recording");
+            record.setAction("/recording?Target=Cris");
             try {
                 twiml.append(leaveAMessage);
                 twiml.append(record);

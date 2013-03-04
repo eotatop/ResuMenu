@@ -138,7 +138,7 @@ public class CyoaServlet extends HttpServlet {
 		cyoaOptions.put("01212.msg", "You get up, you go out, and it was earth all along. Unfortunately you get killed by apes.");
 		cyoaOptions.put("01212.type", "endBad");
 		cyoaOptions.put("0122.msg", "You never wake up from your slumber and you stay in the Matrix forever.");
-		cyoaOptions.put("0122.type", "endBad");
+		cyoaOptions.put("0122.type", "redirect,0");
 		cyoaOptions.put("013.msg", "You boot up the computer. Press 1 to browse the internet. Press 2 to play an addicting game.");
 		cyoaOptions.put("013.type", "continue");
 		cyoaOptions.put("0131.msg", "Ah yes, the internet. Press 1 to look at Cris's qualifications. Press 2 to look at cats.");
@@ -168,7 +168,7 @@ public class CyoaServlet extends HttpServlet {
 		cyoaOptions.put("0222.msg", "You fail to find food, and die.");
 		cyoaOptions.put("0222.type", "endBad");
 		cyoaOptions.put("023.msg", "You head back no worse for the wear to hire Cris.");
-		cyoaOptions.put("023.type", "redirect,0");
+		cyoaOptions.put("023.type", "endGood");
 		cyoaOptions.put("03.msg", "You're now at the creek. Press 1 if you're bad at boating. Press 2 if you can boat like a boss.");
 		cyoaOptions.put("03.type", "continue");
 		cyoaOptions.put("031.msg", "Your boat capsizes. Press 1 if you don't know how to swim. Press 2 to swim towards shore.");

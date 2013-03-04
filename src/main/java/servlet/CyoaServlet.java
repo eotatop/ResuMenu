@@ -134,7 +134,7 @@ public class CyoaServlet extends HttpServlet {
 		cyoaOptions.put("0121.msg", "You wake suddenly. Press 1 if you're still tired. Press 2 if you want to look around.");
 		cyoaOptions.put("0121.type", "continue");
 		cyoaOptions.put("01211.msg", "You fall back asleep. Inception sound. Suddenly, you're awake.");
-		cyoaOptions.put("01211.type", "redirect,01");
+		cyoaOptions.put("01211.type", "redirect,02");
 		cyoaOptions.put("01212.msg", "You get up, you go out, and it was earth all along. Unfortunately you get killed by apes.");
 		cyoaOptions.put("01212.type", "endBad");
 		cyoaOptions.put("0122.msg", "You never wake up from your slumber and you stay in the Matrix forever.");

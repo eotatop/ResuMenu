@@ -19,14 +19,17 @@ public class ContactInfoServlet extends HttpServlet {
 		
 		// Send links to resume
 		if (digits != null && digits.equals("1")) {
-			Play music = new Play("/resources/Music.mp3");
-			try {
-				twiml.append(music);
-				twiml.append(homeRedirect);
-			}
-			catch (TwiMLException e) {
-				e.printStackTrace();
-			}
+			String resumeLinkMessage = "Here's Cris's rehsumay! http://bit.ly/XEnKbu";
+			
+			// If the above dial failed, say an error message.
+            Say say = new Say("Check your text messages for a link to Cris's rehsumay.");
+            try { 
+				twiml.append(new Sms(resumeLinkMessage));
+                twiml.append(say);
+				twiml.append(contactMenuRedirect);
+            } catch (TwiMLException e) {
+                e.printStackTrace();
+            }
 		}
 		// Send link to code
 		else if (digits != null && digits.equals("2")){
@@ -35,13 +38,12 @@ public class ContactInfoServlet extends HttpServlet {
 			// If the above dial failed, say an error message.
             Say say = new Say("Check your text messages for a link to the repository.");
             try { 
-                twiml.append(say);
 				twiml.append(new Sms(codeLinkMessage));
+                twiml.append(say);
 				twiml.append(contactMenuRedirect);
             } catch (TwiMLException e) {
                 e.printStackTrace();
             }
-			
 		}
 		// Leave Cris a recorded message
 		else if (digits != null && digits.equals("3")){

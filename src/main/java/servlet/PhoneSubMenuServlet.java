@@ -87,7 +87,8 @@ public class PhoneSubMenuServlet extends HttpServlet {
 				twiml.append(gather);
 			} catch (TwiMLException e) {
 				e.printStackTrace();
-			}        }
+			} 
+		}
 		// Hidden menu option?
 		else if (digits != null && digits.equals("0")){
             Say say = new Say("Hey! Nobody told you to press that.");

@@ -80,7 +80,8 @@ public class PhoneSubMenuServlet extends HttpServlet {
 			Say sayInGather = new Say("To be sent a link to Cris's resumay, press 1. "
 									  + "To get a link to the code for this application, press 2. "
 									  + "To leave Cris a recorded message, press 3. "
-									  + "To call Cris directly, press 4. ");
+									  + "To call Cris directly, press 4. "
+									  + "To return to the main menu, press 5. ");
 			try {
 				gather.append(sayInGather);
 				twiml.append(gather);

@@ -74,6 +74,14 @@ public class ContactInfoServlet extends HttpServlet {
                 e.printStackTrace();
             }
         }
+		else if (digits != null && digits.equals("5")) {
+			try {
+				twiml.append(homeRedirect);
+			}
+			catch (TwiMLException e) {
+				e.printStackTrace();
+			}
+		}
 		// If they didn't press press a valid response, redirect them home
 		else {
             Say say = new Say("Sorry, that wasn't a valid option.");
